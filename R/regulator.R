@@ -68,7 +68,7 @@ regulator<-function(target,data,plot=TRUE,type="1",scale=TRUE,group='med',FC=2,F
         re=cbind(gene[i],p,d)
         res=rbind(res,re)
       } }
-    if(length(dim(s)[1])){
+    if(length(dim(res)[1])){
       if(as.numeric(res[2])<as.numeric(FDR)){
         results$target=as.character(res[1])
         results$FDR="NA"
@@ -152,7 +152,7 @@ regulator<-function(target,data,plot=TRUE,type="1",scale=TRUE,group='med',FC=2,F
       res=rbind(res,re)
 }
     }
-    if(length(dim(s)[1])){
+    if(length(dim(res)[1])){
       if(as.numeric(res[2])<as.numeric(FDR)){
       results$target=as.character(res[1])
       results$FDR="NA"
