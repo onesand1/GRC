@@ -13,8 +13,8 @@ plot.reg.down<-function(object,r=2,type="line"){
 
   n=length(gene)
 
-  x=seq(1,100,length.out = n)
-  plot(1,2,xlim=c(0,110),ylim=c(0,110),type="n",axes=F,xlab ="", ylab = "")
+  x=seq(15,115,length.out = n)
+  plot(1,2,xlim=c(0,130),ylim=c(0,110),type="n",axes=F,xlab ="", ylab = "")
 
   draw.circle(50,95,r,border="green",col="green",lty=1,density=50,angle=30,lwd=10)
   text(50,95,target)
