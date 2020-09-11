@@ -10,15 +10,7 @@
   if(!require(ggplot2)){
     install.packages("ggplot2",repos = "http://cran.us.r-project.org")
   }
-  if(!require(pheatmap)){
-    install.packages("pheatmap",repos = "http://cran.us.r-project.org")
-  }
-  if(!require(scatterplot3d)){
-    install.packages("scatterplot3d",repos = "http://cran.us.r-project.org")
-  }
-  if(!require(igraph)){
-    install.packages("igraph",repos = "http://cran.us.r-project.org")
-  }
+
   if(!require(plotrix)){
     install.packages("plotrix",repos = "http://cran.us.r-project.org")
   }
@@ -43,6 +35,9 @@
   }
   if(!require(corrplot)){
     install.packages("corrplot",repos = "http://cran.us.r-project.org")
+  }
+    if(!require(Rgraphviz)){
+    BiocManager::install("Rgraphviz")
   }
 }
 
