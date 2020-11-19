@@ -66,10 +66,11 @@ SL<-function(data,group="group",expression=2,exp_type="rpkm",plot=TRUE){
             dev.off()
             }
           }
+          orderP=order(as.numeric(result$P))
           fdr<-rep(1,length(group));
           for(j in 1:length(group)) {
-            fdr[j]<-as.numeric(result$P)*length(group)/j
-}
+            fdr[j]<-as.numeric(result$P[j])*length(group)/orderP[j]
+          }
         result$q_P=fdr
       }}else{
         result$FC_type="Wilcoxon two.sided"
@@ -101,9 +102,10 @@ SL<-function(data,group="group",expression=2,exp_type="rpkm",plot=TRUE){
             dev.off()
 }
           }
+          orderP=order(as.numeric(result$P))
           fdr<-rep(1,length(group));
           for(j in 1:length(group)) {
-            fdr[j]<-as.numeric(result$P)*length(group)/j
+            fdr[j]<-as.numeric(result$P[j])*length(group)/orderP[j]
           }
           result$q_P=fdr
 }
