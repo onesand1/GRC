@@ -3,7 +3,7 @@
 #' @param target the gene that will be check in expression profile
 #' @param data the dataset for gene expression. Consisting of a matrix
 #' @param plot a logical value for ploting results.default TRUE, print the figure to window.
-#' @param type The ragulation type for target. if type=1,  thie model will caculate the downstream genes for target gene; if type=2, it will caculate the  upstream genes for target gene.
+#' @param type The ragulation type for target. if type=1,  thie model will caculate the downregulated genes for target gene; if type=2, it will caculate the  upregulated genes for target gene.
 #' @param scale a logical value indicating whether the expression profile needs to normalized by log2(X+1).default scale=TRUE.
 #' @param group The group for the target gene expresion profile. default is median and group="med"; it also can set "quar" means  gene expression value less than a quartile and more than three quartile.
 #' @param FC  The fold change for difference between target gene and other genes.
@@ -41,7 +41,7 @@ regulator<-function(target,data,plot=TRUE,type="1",scale=TRUE,group='med',FC=2,F
   gene=gene[-twhich]
   n=dim(data)[1]
   if(type==1){
-    results$type="Downstream"
+    results$type="Down-regulation"
     gg=as.numeric(quantile(tdata))
     if(group=="med"){
       high=which(tdata>gg[3])
@@ -132,7 +132,7 @@ regulator<-function(target,data,plot=TRUE,type="1",scale=TRUE,group='med',FC=2,F
 
 
   if(type==2){
-    results$type="Upstream"
+    results$type="Up-regulation"
     res=c()
     for(i in 1:n){
       gdata=as.numeric(t(data[i,]))
