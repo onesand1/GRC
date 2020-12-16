@@ -194,7 +194,7 @@ pathM<-function(data,FC=2,FDR=0.05,group="med",scale=1){
   fill <- rep("lightblue", length(nodes))
   names(fill) <- nodes
   edgeList=results
-  rem=gene2
+  rem=setdiff(gene,gene2)
   graph <- new("graphNEL",nodes=nodes, edgeL=edgeList, edgemode="directed")
   if(length(rem)>0)
   {graph<- removeNode(rem, graph)}
