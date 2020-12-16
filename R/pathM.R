@@ -194,7 +194,7 @@ pathM<-function(data,FC=2,FDR=0.05,group="med",scale=1){
   fill <- rep("lightblue", length(nodes))
   names(fill) <- nodes
   edgeList=results
-  rem=setdiff(gene1,gene2)
+  rem=gene2
   graph <- new("graphNEL",nodes=nodes, edgeL=edgeList, edgemode="directed")
   if(length(rem)>0)
   {graph<- removeNode(rem, graph)}
@@ -204,5 +204,5 @@ pathM<-function(data,FC=2,FDR=0.05,group="med",scale=1){
 
   #plot
   renderGraph(rag)
-  legend("bottomright",c("Inhibition","Promotion"),y.intersp=1,xpd=T,inset = -0.2, pch=c("|","》"),col=c("red","blue"),bty="n", title= "Edge type", horiz=F,lwd=2)
+  legend("bottomright",c("down-regulation","up-regulation"),y.intersp=1,xpd=T,inset = -0.2, pch=c("|","》"),col=c("red","blue"),bty="n", title= "Edge type", horiz=F,lwd=2)
 }
