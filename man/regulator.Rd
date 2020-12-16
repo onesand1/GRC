@@ -22,7 +22,7 @@ the dataset for gene expression. Consisting of a matrix. Rownames are gene names
 a logical value for ploting results.default TRUE, print the figure to window.
 }
   \item{type}{
-The ragulation type for target. if type=1,  thie model will caculate the downstream genes for target gene; if type=2, it will caculate the  upstream genes for target gene.
+The ragulation type for target. if type=1,  thie model will caculate the downregulated genes for target gene; if type=2, it will caculate the  upregulated genes for target gene.
 }
   \item{scale}{
 a logical value indicating whether the expression profile needs to normalized by log2(X+1).default scale=TRUE.
